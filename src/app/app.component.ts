@@ -1,20 +1,25 @@
 import { Component } from '@angular/core';
-import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import { Auth } from './auth.service';
+import { Router } from '@angular/router'
 
  @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-    providers: [NgbCarouselConfig] // add NgbCarouselConfig to the component providers
 
 })
 export class AppComponent {
 
-constructor(config: NgbCarouselConfig) {
-    // customize default values of carousels used by this component tree
-    config.interval = 10000;
-    config.wrap = false;
-    config.keyboard = false;
+constructor( 
+  private auth: Auth,
+  private router: Router) {
+    
+  }
+
+  goProfile(){
+    let name = JSON.parse(localStorage.getItem('profile')).name;
+    let link = ['/profile', name];
+    this.router.navigate(link);
   }
   
 }

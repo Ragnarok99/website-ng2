@@ -31,45 +31,24 @@
         <li class="nav-item">
           <a class="nav-item nav-link" href="https://blog.getbootstrap.com" onclick="ga('send', 'event', 'Navbar', 'Community links', 'Blog');">Blog</a>
         </li>
+
+        <li class="nav-item nav-link" *ngIf="auth.authenticated()">
+          <span (click)="goProfile()">Profile</span>
+         </li>
+
+        <li class="nav-item">
+          <button class="btn btn-primary btn-margin" (click)="auth.login()" *ngIf="!auth.authenticated()">Log In</button>
+        </li>
+        <li class="nav-item">
+          <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.authenticated()">Log Out</button>
+        </li>
       </ul>
     </div>
   </nav>
 </header>
 
 <div class="container">
-    <div class="row">
-          <div class="col-sm-10">   
-            <ngb-carousel>
-        <template ngbSlide>
-            <img src="http://lorempixel.com/900/500?r=1" alt="Random first slide">
-            <div class="carousel-caption">
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-        </template>
-        <template ngbSlide>
-            <img src="http://lorempixel.com/900/500?r=2" alt="Random second slide">
-            <div class="carousel-caption">
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </template>
-        <template ngbSlide>
-            <img src="http://lorempixel.com/900/500?r=3" alt="Random third slide">
-            <div class="carousel-caption">
-            <h3>Third slide label</h3>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-            </div>
-        </template>
-</ngb-carousel>
-
-    </div>
-
-    <div class="col-sm-2">
-        <p>
-            content
-        </p>
-    </div>
-    </div>
+   
+  <router-outlet></router-outlet>
 
 </div>

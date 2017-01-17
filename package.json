@@ -1,5 +1,5 @@
 {
-  "name": "websiteac",
+  "name": "website-ng2",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},
@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.18",
+    "angular2-jwt": "^0.1.28",
+    "auth0-lock": "^10.9.2",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
     "rxjs": "^5.0.1",
